@@ -1,11 +1,9 @@
 # WorldCup2026
 
-
+`
 src/
 ├── controllers/
-
 │   ├── AuthController.js
-
 │   ├── PartidoController.js
 │   ├── PrediccionController.js
 │   ├── ClasificadoController.js
@@ -46,3 +44,4 @@ src/
 ├── middlewares/
 │   └── auth.middleware.js
 └── app.js
+`
