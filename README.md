@@ -3,7 +3,9 @@
 
 src/
 ├── controllers/
+
 │   ├── AuthController.js
+
 │   ├── PartidoController.js
 │   ├── PrediccionController.js
 │   ├── ClasificadoController.js
