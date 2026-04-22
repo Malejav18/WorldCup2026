@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mundial 2026</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Predicción Partido</h2>
+
+    <input id="usuario" placeholder="ID Usuario">
+    <input id="partido" placeholder="ID Partido">
+    <input id="local" placeholder="Goles Local">
+    <input id="visitante" placeholder="Goles Visitante">
+
+    <button onclick="enviar()">Guardar</button>
+</div>
+
+<script>
+async function enviar() {
+
+    const data = {
+        usuario_id: document.getElementById('usuario').value,
+        partido_id: document.getElementById('partido').value,
+        goles_local: document.getElementById('local').value,
+        goles_visitante: document.getElementById('visitante').value,
+        terceros: [1,2,3,4,5,6,7,8]
+    };
+
+    const res = await fetch('http://localhost:3000/predicciones', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    });
+
+    alert("Guardado");
+}
+</script>
+
+</body>
+</html>
