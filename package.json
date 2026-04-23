@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/Malejav18/WorldCup2026/issues"
   },
-  "homepage": "https://github.com/Malejav18/WorldCup2026#readme",
-  "dependencies": {
-    "express": "^5.2.1",
-    "mysql2": "^3.22.2"
-  }
+  "homepage": "https://github.com/Malejav18/WorldCup2026#readme"
 }

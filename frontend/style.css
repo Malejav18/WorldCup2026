@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #020617;
+    border-bottom: 2px solid #22c55e;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 10px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match input {
+    width: 40%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #16a34a;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #15803d;
+}
+
+.ranking {
+    margin-top: 20px;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    background: #1e293b;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 5px solid #22c55e;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mundial 2026</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>⚽ Mundial 2026</h1>
+    <nav>
+        <button onclick="mostrar('predicciones')">Predicciones</button>
+        <button onclick="mostrar('ranking')">Ranking</button>
+    </nav>
+</header>
+
+<main>
+
+<!-- PREDICCIONES -->
+<section id="predicciones" class="active">
+    <h2>Ingresar Predicción</h2>
+
+    <div class="card">
+        <input id="usuario" placeholder="ID Usuario">
+
+        <div class="match">
+            <input id="local" placeholder="Goles Local">
+            <span>VS</span>
+            <input id="visitante" placeholder="Goles Visitante">
+        </div>
+
+        <input id="partido" placeholder="ID Partido">
+
+        <button onclick="guardarPrediccion()">Guardar Predicción</button>
+    </div>
+</section>
+
+<!-- RANKING -->
+<section id="ranking">
+    <h2>Ranking Mundial</h2>
+    <div id="tablaRanking" class="ranking"></div>
+</section>
+
+</main>
+
+</body>
+
+<script src="app.js"></script>
+</html>
