@@ -1,0 +1,80 @@
+import { useQuery } from "@tanstack/react-query";
+import { useMemo, useState } from "react";
+import { tournamentApi } from "../api/tournament";
+import { PredictionRow } from "../components/PredictionRow";
+import { Spinner } from "../components/Spinner";
+import { phaseLabel, statusBadge } from "../utils/format";
+import type { Match } from "../types";
+
+const STATUSES = ["ALL", "SCHEDULED", "LIVE", "FINISHED"] as const;
+const PHASES = ["ALL", "GROUP", "R32", "R16", "QF", "SF", "THIRD_PLACE", "FINAL"] as const;
+
+export function MatchesPage() {
+  const [status, setStatus] = useState<(typeof STATUSES)[number]>("SCHEDULED");
+  const [phase, setPhase] = useState<(typeof PHASES)[number]>("ALL");
+
+  const teams = useQuery({ queryKey: ["tournament", "teams"], queryFn: tournamentApi.teams });
+  const matches = useQuery({
+    queryKey: ["tournament", "matches", status, phase],
+    queryFn: () =>
+      tournamentApi.matches({
+        status: status === "ALL" ? undefined : status,
+        phase: phase === "ALL" ? undefined : phase,
+      }),
+  });
+
+  const teamMap = useMemo(() => {
+    const m = new Map<string, { id: string; name: string; country_code: string; confederation: string; group_id: string | null }>();
+    (teams.data ?? []).forEach((t) => m.set(t.id, t));
+    return m;
+  }, [teams.data]);
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h1 className="text-2xl font-bold">Partidos</h1>
+        <p className="text-slate-500 text-sm">Filtra por fase o estado. Haz tu prediccion antes de que el partido empiece.</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        <div className="flex items-center gap-1">
+          <span className="text-sm text-slate-500">Estado:</span>
+          {STATUSES.map((s) => (
+            <button
+              key={s}
+              onClick={() => setStatus(s)}
+              className={`badge px-2 py-1 text-xs ${status === s ? "bg-brand-600 text-white" : statusBadge(s)}`}
+            >
+              {s === "ALL" ? "Todos" : s}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="text-sm text-slate-500">Fase:</span>
+          {PHASES.map((p) => (
+            <button
+              key={p}
+              onClick={() => setPhase(p)}
+              className={`badge px-2 py-1 text-xs ${phase === p ? "bg-brand-600 text-white" : "bg-slate-200 text-slate-700"}`}
+            >
+              {p === "ALL" ? "Todas" : phaseLabel(p)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {matches.isLoading || teams.isLoading ? (
+        <Spinner label="Cargando partidos..." />
+      ) : (
+        <div className="space-y-2">
+          <div className="text-xs text-slate-500">
+            {matches.data?.length ?? 0} partidos
+          </div>
+          {(matches.data ?? []).map((m: Match) => (
+            <PredictionRow key={m.id} match={m} teams={teamMap} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

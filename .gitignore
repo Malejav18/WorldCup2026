@@ -1,0 +1,29 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Entorno
+.env
+backend/.env
+
+# Bases de datos locales (SQLite)
+backend/*/data/*.db
+backend/*/data/*.db-journal
+backend/*/data/*.db-wal
+backend/*/data/*.db-shm
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Frontend (para fases posteriores)
+frontend/node_modules/
+frontend/dist/
+frontend/build/

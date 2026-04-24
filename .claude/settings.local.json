@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn tournament_service.app.main:app --host 127.0.0.1 --port 8003 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn auth_service.app.main:app --host 127.0.0.1 --port 8001 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn api_gateway.main:app --host 127.0.0.1 --port 8000 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn user_service.app.main:app --host 127.0.0.1 --port 8002 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn prediction_service.app.main:app --host 127.0.0.1 --port 8004 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -c \"import sqlite3; c=sqlite3.connect\\(r'backend\\\\prediction_service\\\\data\\\\prediction.db'\\); [print\\(r\\) for r in c.execute\\('SELECT id, user_id, match_id, is_locked FROM predictions'\\)]\")",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn scoring_service.app.main:app --host 127.0.0.1 --port 8005 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn ranking_service.app.main:app --host 127.0.0.1 --port 8006 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn league_service.app.main:app --host 127.0.0.1 --port 8007 --app-dir backend)",
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe -m uvicorn notification_service.app.main:app --host 127.0.0.1 --port 8008 --app-dir backend)"
+    ]
+  }
+}
