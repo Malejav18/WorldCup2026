@@ -5,18 +5,22 @@ import type { Match, Team, Prediction } from "../types";
 import { AxiosError } from "axios";
 
 const R32_ALLOWED_GROUPS: Record<number, { home: string[]; away: string[] }> = {
-  73: { home: ['A'], away: ['C', 'D', 'E'] },
-  74: { home: ['A'], away: ['C'] },
-  75: { home: ['B'], away: ['E', 'F', 'A'] },
-  76: { home: ['B'], away: ['D'] },
-  77: { home: ['C'], away: ['A', 'B', 'F'] },
-  78: { home: ['C'], away: ['A'] },
-  79: { home: ['D'], away: ['B', 'C', 'E'] },
-  80: { home: ['D'], away: ['B'] },
-  81: { home: ['E'], away: ['A', 'D', 'F'] },
-  82: { home: ['E'], away: ['F'] },
-  83: { home: ['F'], away: ['B', 'C', 'D'] },
-  84: { home: ['F'], away: ['E'] },
+  73: { home: ['A'], away: ['B'] },
+  74: { home: ['E'], away: ['A', 'B', 'C', 'D', 'F'] },
+  75: { home: ['F'], away: ['C'] },
+  76: { home: ['C'], away: ['F'] },
+  77: { home: ['I'], away: ['C', 'D', 'F', 'G', 'H'] },
+  78: { home: ['E'], away: ['I'] },
+  79: { home: ['A'], away: ['C', 'E', 'F', 'H', 'I'] },
+  80: { home: ['L'], away: ['E', 'H', 'I', 'J', 'K'] },
+  81: { home: ['D'], away: ['B', 'E', 'F', 'I', 'J'] },
+  82: { home: ['G'], away: ['A','E','H','I','J'] },
+  83: { home: ['K'], away: ['L'] },
+  84: { home: ['H'], away: ['J'] },
+  85: { home: ['B'], away: ['E', 'F', 'G','I', 'J'] },
+  86: { home: ['J'], away: ['H'] },
+  87: { home: ['K'], away: ['D','E','I', 'J','L'] },
+  88: { home: ['D'], away: ['G'] },
   // Para otros partidos, permitir todos
 };
 
@@ -42,18 +46,22 @@ const KNOCKOUT_DEPENDENCIES: Record<number, { homeMatch: number; awayMatch: numb
 };
 
 const R32_POSITION_LABELS: Record<number, string> = {
-  73: '1° Grupo A vs 3° (mejor ubicado de C/D/E)',
-  74: '2° Grupo A vs 2° Grupo C',
-  75: '1° Grupo B vs 3° (mejor de E/F/A)',
-  76: '2° Grupo B vs 2° Grupo D',
-  77: '1° Grupo C vs 3° (mejor de A/B/F)',
-  78: '2° Grupo C vs 2° Grupo A',
-  79: '1° Grupo D vs 3° (mejor de B/C/E)',
-  80: '2° Grupo D vs 2° Grupo B',
-  81: '1° Grupo E vs 3° (mejor de A/D/F)',
-  82: '2° Grupo E vs 2° Grupo F',
-  83: '1° Grupo F vs 3° (mejor de B/C/D)',
-  84: '2° Grupo F vs 2° Grupo E',
+  73: '2° Grupo A vs 2° Grupo B',
+  74: '2° Grupo E vs 3° (mejor de A/B/C/D/F)',
+  75: '1° Grupo F vs 2° Grupo C',
+  76: '2° Grupo C vs 2° Grupo F',
+  77: '1° Grupo I vs 3° (mejor de C/D/F/G/H)',
+  78: '2° Grupo E vs 2° Grupo I',
+  79: '1° Grupo A vs 3° (mejor de C/E/F/H/I)',
+  80: '2° Grupo L vs 3° (mejor de E/H/I/J/K)',
+  81: '1° Grupo D vs 3° (mejor de B/E/F/I/J)',
+  82: '2° Grupo G vs 3° (mejor de A/E/H/I/J)',
+  83: '1° Grupo K vs 2° Grupo L',
+  84: '2° Grupo H vs 2° Grupo J',
+  85: '2° Grupo B vs 3° (mejor de E/F/G/I/J)',
+  86: '2° Grupo J vs 2° Grupo H',
+  87: '2° Grupo K vs 3° (mejor de D/E/I/J/L)',
+  88: '2° Grupo D vs 2° Grupo G',
 };
 
 const getLoserTeamId = (prediction: Prediction | null): string | null => {
@@ -67,7 +75,7 @@ const getLoserTeamId = (prediction: Prediction | null): string | null => {
   return null;
 };
 
-export function PredictionRow({ match, teams, groups, matchNumberToId, existingPrediction, r32UsedTeamIds, onR32SelectionChange }: { match: Match; teams: Map<string, Team>; groups: Map<string, { id: string; letter: string; name: string }>; matchNumberToId: Map<number, string>; existingPrediction?: Prediction | null; r32UsedTeamIds: Set<string>; onR32SelectionChange: (matchId: string, selection: { homeTeamId: string; awayTeamId: string }) => void; }) {
+export function PredictionRow({ match, teams, groups, matchNumberToId, existingPrediction, r32UsedTeamIds, onR32SelectionChange, blockedGroups }: { match: Match; teams: Map<string, Team>; groups: Map<string, { id: string; letter: string; name: string }>; matchNumberToId: Map<number, string>; existingPrediction?: Prediction | null; r32UsedTeamIds: Set<string>; onR32SelectionChange: (matchId: string, selection: { homeTeamId: string; awayTeamId: string }) => void; blockedGroups?: Set<string>; }) {
   const qc = useQueryClient();
   const home = match.home_team_id ? teams.get(match.home_team_id) : null;
   const away = match.away_team_id ? teams.get(match.away_team_id) : null;
@@ -142,8 +150,18 @@ export function PredictionRow({ match, teams, groups, matchNumberToId, existingP
     return blocked;
   }, [r32UsedTeamIds, selectedHomeTeamId, selectedAwayTeamId, existingPrediction]);
 
-  const isHomeTeamOptionDisabled = (teamId: string) => duplicateR32TeamIds.has(teamId) || teamId === selectedAwayTeamId;
-  const isAwayTeamOptionDisabled = (teamId: string) => duplicateR32TeamIds.has(teamId) || teamId === selectedHomeTeamId;
+  const isHomeTeamOptionDisabled = (teamId: string) => {
+    const team = teams.get(teamId);
+    const groupLetter = team && team.group_id ? groups.get(team.group_id)?.letter : '';
+    const isGroupBlocked = blockedGroups && allowedHomeGroups.length > 1 && groupLetter && blockedGroups.has(groupLetter);
+    return duplicateR32TeamIds.has(teamId) || teamId === selectedAwayTeamId || isGroupBlocked;
+  };
+  const isAwayTeamOptionDisabled = (teamId: string) => {
+    const team = teams.get(teamId);
+    const groupLetter = team && team.group_id ? groups.get(team.group_id)?.letter : '';
+    const isGroupBlocked = blockedGroups && allowedAwayGroups.length > 1 && groupLetter && blockedGroups.has(groupLetter);
+    return duplicateR32TeamIds.has(teamId) || teamId === selectedHomeTeamId || isGroupBlocked;
+  };
 
   const isFinished = match.status === "FINISHED";
   const isLocked = existingPrediction?.is_locked || isFinished;
@@ -203,11 +221,18 @@ export function PredictionRow({ match, teams, groups, matchNumberToId, existingP
               disabled={isLocked}
             >
               <option value="">Seleccionar equipo</option>
-              {homeTeams.map((t) => (
-                <option key={t.id} value={t.id} disabled={isHomeTeamOptionDisabled(t.id)}>
-                  {t.name}{isHomeTeamOptionDisabled(t.id) ? " (Seleccionado en otro partido)" : ""}
-                </option>
-              ))}
+              {homeTeams.map((t) => {
+                const isDisabled: boolean = isHomeTeamOptionDisabled(t.id);
+                const team = teams.get(t.id);
+                const groupLetter = team && team.group_id ? groups.get(team.group_id)?.letter : '';
+                const isGroupBlocked = blockedGroups && allowedHomeGroups.length > 1 && groupLetter && blockedGroups.has(groupLetter);
+                const reason = duplicateR32TeamIds.has(t.id) ? " (Seleccionado en otro partido)" : isGroupBlocked ? " (Grupo bloqueado)" : "";
+                return (
+                  <option key={t.id} value={t.id} disabled={isDisabled}>
+                    {t.name}{reason}
+                  </option>
+                );
+              })}
             </select>
           ) : (
             teams.get(predictedHomeTeamId || "")?.name ?? home?.name ?? match.home_team_slot ?? "TBD"
@@ -221,11 +246,18 @@ export function PredictionRow({ match, teams, groups, matchNumberToId, existingP
               disabled={isLocked}
             >
               <option value="">Seleccionar equipo</option>
-              {awayTeams.map((t) => (
-                <option key={t.id} value={t.id} disabled={isAwayTeamOptionDisabled(t.id)}>
-                  {t.name}{isAwayTeamOptionDisabled(t.id) ? " (Seleccionado en otro partido)" : ""}
-                </option>
-              ))}
+              {awayTeams.map((t) => {
+                const isDisabled: boolean = isAwayTeamOptionDisabled(t.id);
+                const team = teams.get(t.id);
+                const groupLetter = team && team.group_id ? groups.get(team.group_id)?.letter : '';
+                const isGroupBlocked = blockedGroups && allowedAwayGroups.length > 1 && groupLetter && blockedGroups.has(groupLetter);
+                const reason = duplicateR32TeamIds.has(t.id) ? " (Seleccionado en otro partido)" : isGroupBlocked ? " (Grupo bloqueado)" : "";
+                return (
+                  <option key={t.id} value={t.id} disabled={isDisabled}>
+                    {t.name}{reason}
+                  </option>
+                );
+              })}
             </select>
           ) : (
             teams.get(predictedAwayTeamId || "")?.name ?? away?.name ?? match.away_team_slot ?? "TBD"

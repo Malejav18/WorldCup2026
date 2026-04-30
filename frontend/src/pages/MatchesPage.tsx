@@ -9,6 +9,26 @@ import type { Match, Prediction } from "../types";
 
 const STATUSES = ["ALL", "SCHEDULED", "LIVE", "FINISHED"] as const;
 const PHASES = ["ALL", "GROUP", "R32", "R16", "QF", "SF", "THIRD_PLACE", "FINAL"] as const;
+  
+const R32_ALLOWED_GROUPS: Record<number, { home: string[]; away: string[] }> = {
+  73: { home: ['A'], away: ['B'] },
+  74: { home: ['A'], away: ['A', 'B', 'C', 'D', 'F'] },
+  75: { home: ['F'], away: ['C'] },
+  76: { home: ['C'], away: ['F'] },
+  77: { home: ['I'], away: ['C', 'D', 'F', 'G', 'H'] },
+  78: { home: ['E'], away: ['I'] },
+  79: { home: ['A'], away: ['C', 'E', 'F', 'H', 'I'] },
+  80: { home: ['L'], away: ['E', 'H', 'I', 'J', 'K'] },
+  81: { home: ['D'], away: ['B', 'E', 'F', 'I', 'J'] },
+  82: { home: ['G'], away: ['A','E','H','I','J'] },
+  83: { home: ['K'], away: ['L'] },
+  84: { home: ['H'], away: ['J'] },
+  85: { home: ['B'], away: ['E', 'F', 'G','I', 'J'] },
+  86: { home: ['J'], away: ['H'] },
+  87: { home: ['K'], away: ['D','E','I', 'J','L'] },
+  88: { home: ['D'], away: ['G'] },
+  // Para otros partidos, permitir todos
+};
 
 export function MatchesPage() {
   const [status, setStatus] = useState<(typeof STATUSES)[number]>("SCHEDULED");
@@ -81,6 +101,31 @@ export function MatchesPage() {
     return used;
   }, [r32Selections]);
 
+  const blockedGroups = useMemo(() => {
+    const blocked = new Set<string>();
+    Object.entries(r32Selections).forEach(([matchId, selection]) => {
+      const match = allMatches.data?.find(m => m.id === matchId);
+      if (!match || match.phase !== "R32") return;
+      const allowed = R32_ALLOWED_GROUPS[match.match_number];
+      if (!allowed) return;
+      if (selection.homeTeamId && allowed.home.length > 1) {
+        const team = teamMap.get(selection.homeTeamId);
+        if (team?.group_id) {
+          const group = groupMap.get(team.group_id);
+          if (group) blocked.add(group.letter);
+        }
+      }
+      if (selection.awayTeamId && allowed.away.length > 1) {
+        const team = teamMap.get(selection.awayTeamId);
+        if (team?.group_id) {
+          const group = groupMap.get(team.group_id);
+          if (group) blocked.add(group.letter);
+        }
+      }
+    });
+    return blocked;
+  }, [r32Selections, allMatches.data, teamMap, groupMap]);
+
   const handleR32SelectionChange = useCallback(
     (matchId: string, selection: { homeTeamId: string; awayTeamId: string }) => {
       setR32Selections((current) => {
@@ -148,6 +193,7 @@ export function MatchesPage() {
               existingPrediction={predictionsByMatch.get(m.id) ?? null}
               r32UsedTeamIds={r32UsedTeamIds}
               onR32SelectionChange={handleR32SelectionChange}
+              blockedGroups={blockedGroups}
             />
           ))}
         </div>
