@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 import { tournamentApi } from "../api/tournament";
+import { predictionsApi } from "../api/predictions";
 import { PredictionRow } from "../components/PredictionRow";
 import { Spinner } from "../components/Spinner";
 import { phaseLabel, statusBadge } from "../utils/format";
-import type { Match } from "../types";
+import type { Match, Prediction } from "../types";
 
 const STATUSES = ["ALL", "SCHEDULED", "LIVE", "FINISHED"] as const;
 const PHASES = ["ALL", "GROUP", "R32", "R16", "QF", "SF", "THIRD_PLACE", "FINAL"] as const;
@@ -14,6 +15,11 @@ export function MatchesPage() {
   const [phase, setPhase] = useState<(typeof PHASES)[number]>("ALL");
 
   const teams = useQuery({ queryKey: ["tournament", "teams"], queryFn: tournamentApi.teams });
+  const groups = useQuery({ queryKey: ["tournament", "groups"], queryFn: tournamentApi.groups });
+  const allMatches = useQuery({
+    queryKey: ["tournament", "matches", "all"],
+    queryFn: () => tournamentApi.matches({}),
+  });
   const matches = useQuery({
     queryKey: ["tournament", "matches", status, phase],
     queryFn: () =>
@@ -28,6 +34,68 @@ export function MatchesPage() {
     (teams.data ?? []).forEach((t) => m.set(t.id, t));
     return m;
   }, [teams.data]);
+
+  const groupMap = useMemo(() => {
+    const m = new Map<string, { id: string; letter: string; name: string }>();
+    (groups.data ?? []).forEach((g) => m.set(g.id, g));
+    return m;
+  }, [groups.data]);
+
+  const matchNumberToId = useMemo(() => {
+    const m = new Map<number, string>();
+    (allMatches.data ?? []).forEach((match) => m.set(match.match_number, match.id));
+    return m;
+  }, [allMatches.data]);
+
+  const predictions = useQuery({ queryKey: ["predictions", "mine"], queryFn: predictionsApi.mine });
+  const predictionsByMatch = useMemo(() => {
+    const map = new Map<string, Prediction>();
+    (predictions.data ?? []).forEach((prediction) => map.set(prediction.match_id, prediction));
+    return map;
+  }, [predictions.data]);
+
+  const [r32Selections, setR32Selections] = useState<Record<string, { homeTeamId: string; awayTeamId: string }>>({});
+
+  useEffect(() => {
+    if (!predictions.data) return;
+
+    setR32Selections((current) => {
+      const next = { ...current };
+      (predictions.data ?? []).forEach((prediction: Prediction) => {
+        if (prediction.match_phase !== "R32") return;
+        next[prediction.match_id] = {
+          homeTeamId: prediction.predicted_home_team_id ?? "",
+          awayTeamId: prediction.predicted_away_team_id ?? "",
+        };
+      });
+      return next;
+    });
+  }, [predictions.data]);
+
+  const r32UsedTeamIds = useMemo(() => {
+    const used = new Set<string>();
+    Object.values(r32Selections).forEach((selection) => {
+      if (selection.homeTeamId) used.add(selection.homeTeamId);
+      if (selection.awayTeamId) used.add(selection.awayTeamId);
+    });
+    return used;
+  }, [r32Selections]);
+
+  const handleR32SelectionChange = useCallback(
+    (matchId: string, selection: { homeTeamId: string; awayTeamId: string }) => {
+      setR32Selections((current) => {
+        const existing = current[matchId];
+        if (existing?.homeTeamId === selection.homeTeamId && existing?.awayTeamId === selection.awayTeamId) {
+          return current;
+        }
+        return {
+          ...current,
+          [matchId]: selection,
+        };
+      });
+    },
+    [],
+  );
 
   return (
     <div className="space-y-4">
@@ -63,7 +131,7 @@ export function MatchesPage() {
         </div>
       </div>
 
-      {matches.isLoading || teams.isLoading ? (
+      {matches.isLoading || teams.isLoading || groups.isLoading || allMatches.isLoading || predictions.isLoading ? (
         <Spinner label="Cargando partidos..." />
       ) : (
         <div className="space-y-2">
@@ -71,7 +139,16 @@ export function MatchesPage() {
             {matches.data?.length ?? 0} partidos
           </div>
           {(matches.data ?? []).map((m: Match) => (
-            <PredictionRow key={m.id} match={m} teams={teamMap} />
+            <PredictionRow
+              key={m.id}
+              match={m}
+              teams={teamMap}
+              groups={groupMap}
+              matchNumberToId={matchNumberToId}
+              existingPrediction={predictionsByMatch.get(m.id) ?? null}
+              r32UsedTeamIds={r32UsedTeamIds}
+              onR32SelectionChange={handleR32SelectionChange}
+            />
           ))}
         </div>
       )}

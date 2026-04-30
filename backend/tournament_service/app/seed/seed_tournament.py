@@ -14,7 +14,17 @@ from datetime import datetime, timedelta
 
 from tournament_service.app.database import Base, SessionLocal, engine
 from tournament_service.app.entities.group import Group
-from tournament_service.app.entities.match import PHASE_GROUP, STATUS_SCHEDULED, Match
+from tournament_service.app.entities.match import (
+    PHASE_GROUP,
+    PHASE_R32,
+    PHASE_R16,
+    PHASE_QF,
+    PHASE_SF,
+    PHASE_THIRD_PLACE,
+    PHASE_FINAL,
+    STATUS_SCHEDULED,
+    Match,
+)
 from tournament_service.app.entities.team import Team
 from tournament_service.app.entities.tournament_state import STATE_PRE_START, TournamentState
 
@@ -106,10 +116,41 @@ def seed() -> None:
                 )
                 match_number += 1
 
+        elimination_phases = [
+            (PHASE_R32, 16),
+            (PHASE_R16, 8),
+            (PHASE_QF, 4),
+            (PHASE_SF, 2),
+            (PHASE_THIRD_PLACE, 1),
+            (PHASE_FINAL, 1),
+        ]
+
+        for phase, count in elimination_phases:
+            for i in range(count):
+                scheduled = base_date + timedelta(days=(match_number // 4), hours=(i % 3) * 3)
+                db.add(
+                    Match(
+                        id=_new_uuid(),
+                        match_number=match_number,
+                        phase=phase,
+                        group_id=None,
+                        home_team_id=None,
+                        away_team_id=None,
+                        home_team_slot=None,
+                        away_team_slot=None,
+                        scheduled_at=scheduled,
+                        status=STATUS_SCHEDULED,
+                    )
+                )
+                match_number += 1
+
         db.commit()
-        print(f"Seed completo: {len(GROUPS_DATA)} grupos, "
-              f"{sum(len(t) for _, t in GROUPS_DATA)} equipos, "
-              f"{match_number - 1} partidos de fase de grupos.")
+        total_matches = match_number - 1
+        print(
+            f"Seed completo: {len(GROUPS_DATA)} grupos, "
+            f"{sum(len(t) for _, t in GROUPS_DATA)} equipos, "
+            f"{total_matches} partidos (72 fase de grupos + 32 segunda fase)."
+        )
 
 
 if __name__ == "__main__":

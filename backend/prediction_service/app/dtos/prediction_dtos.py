@@ -12,6 +12,8 @@ class PredictionUpsertRequest(BaseModel):
     match_id: str
     predicted_home_goals_90: int = Field(ge=0, le=20)
     predicted_away_goals_90: int = Field(ge=0, le=20)
+    predicted_home_team_id: str | None = None
+    predicted_away_team_id: str | None = None
     predicted_winner_id: str | None = None
     predicted_goes_to_penalties: bool = False
 
@@ -24,6 +26,8 @@ class PredictionPublic(BaseModel):
     match_id: str
     predicted_home_goals_90: int
     predicted_away_goals_90: int
+    predicted_home_team_id: str | None
+    predicted_away_team_id: str | None
     predicted_winner_id: str | None
     predicted_goes_to_penalties: bool
     match_phase: str

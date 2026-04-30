@@ -25,6 +25,10 @@ class Prediction(Base):
     predicted_home_goals_90: Mapped[int] = mapped_column(Integer, nullable=False)
     predicted_away_goals_90: Mapped[int] = mapped_column(Integer, nullable=False)
 
+    # Para partidos donde los equipos no están definidos (ej R32), el usuario predice qué equipos juegan.
+    predicted_home_team_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    predicted_away_team_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+
     # Requerido en eliminatorias; opcional en fase de grupos (puede haber empate).
     predicted_winner_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
     predicted_goes_to_penalties: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)

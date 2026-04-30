@@ -99,6 +99,8 @@ export interface Prediction {
   match_id: string;
   predicted_home_goals_90: number;
   predicted_away_goals_90: number;
+  predicted_home_team_id: string | null;
+  predicted_away_team_id: string | null;
   predicted_winner_id: string | null;
   predicted_goes_to_penalties: boolean;
   match_phase: string;

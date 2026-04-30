@@ -56,12 +56,27 @@ class PredictionService:
         phase = match.get("phase", "GROUP")
         self._validate_rules(phase, req)
 
+        # Validar equipos predichos si no están definidos en el match
+        if match.get("home_team_id") is None:
+            if req.predicted_home_team_id is None:
+                raise PredictionError("predicted_home_team_id is required when match home_team_id is not set")
+        if match.get("away_team_id") is None:
+            if req.predicted_away_team_id is None:
+                raise PredictionError("predicted_away_team_id is required when match away_team_id is not set")
+
+        # Si se predijeron equipos, winner debe ser uno de ellos
+        if req.predicted_home_team_id and req.predicted_away_team_id and req.predicted_winner_id:
+            if req.predicted_winner_id not in [req.predicted_home_team_id, req.predicted_away_team_id]:
+                raise PredictionError("predicted_winner_id must be one of the predicted teams")
+
         existing = self.predictions.get_by_user_and_match(user_id, req.match_id)
         if existing is not None:
             if existing.is_locked:
                 raise PredictionError("Prediction is locked and cannot be edited")
             existing.predicted_home_goals_90 = req.predicted_home_goals_90
             existing.predicted_away_goals_90 = req.predicted_away_goals_90
+            existing.predicted_home_team_id = req.predicted_home_team_id
+            existing.predicted_away_team_id = req.predicted_away_team_id
             existing.predicted_winner_id = req.predicted_winner_id
             existing.predicted_goes_to_penalties = req.predicted_goes_to_penalties
             existing.match_phase = phase
@@ -74,6 +89,8 @@ class PredictionService:
             match_id=req.match_id,
             predicted_home_goals_90=req.predicted_home_goals_90,
             predicted_away_goals_90=req.predicted_away_goals_90,
+            predicted_home_team_id=req.predicted_home_team_id,
+            predicted_away_team_id=req.predicted_away_team_id,
             predicted_winner_id=req.predicted_winner_id,
             predicted_goes_to_penalties=req.predicted_goes_to_penalties,
             match_phase=phase,
