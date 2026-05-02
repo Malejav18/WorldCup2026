@@ -32,19 +32,18 @@ from tournament_service.app.entities.tournament_state import STATE_PRE_START, To
 # 48 equipos distribuidos en 12 grupos (A..L), 4 equipos por grupo.
 # Composicion representativa para fines academicos.
 GROUPS_DATA: list[tuple[str, list[tuple[str, str, str]]]] = [
-    # (letra_grupo, [(nombre, country_code, confederacion), ...])
-    ("A", [("Canada", "CAN", "CONCACAF"), ("Belgica", "BEL", "UEFA"), ("Marruecos", "MAR", "CAF"), ("Corea del Sur", "KOR", "AFC")]),
-    ("B", [("Estados Unidos", "USA", "CONCACAF"), ("Paises Bajos", "NED", "UEFA"), ("Japon", "JPN", "AFC"), ("Ghana", "GHA", "CAF")]),
-    ("C", [("Mexico", "MEX", "CONCACAF"), ("Croacia", "CRO", "UEFA"), ("Australia", "AUS", "AFC"), ("Nigeria", "NGA", "CAF")]),
-    ("D", [("Argentina", "ARG", "CONMEBOL"), ("Polonia", "POL", "UEFA"), ("Senegal", "SEN", "CAF"), ("Costa Rica", "CRC", "CONCACAF")]),
-    ("E", [("Francia", "FRA", "UEFA"), ("Dinamarca", "DEN", "UEFA"), ("Tunez", "TUN", "CAF"), ("Iran", "IRN", "AFC")]),
-    ("F", [("Brasil", "BRA", "CONMEBOL"), ("Suiza", "SUI", "UEFA"), ("Camerun", "CMR", "CAF"), ("Arabia Saudita", "KSA", "AFC")]),
-    ("G", [("Inglaterra", "ENG", "UEFA"), ("Uruguay", "URU", "CONMEBOL"), ("Egipto", "EGY", "CAF"), ("Qatar", "QAT", "AFC")]),
-    ("H", [("Espana", "ESP", "UEFA"), ("Colombia", "COL", "CONMEBOL"), ("Costa de Marfil", "CIV", "CAF"), ("Nueva Zelanda", "NZL", "OFC")]),
-    ("I", [("Portugal", "POR", "UEFA"), ("Ecuador", "ECU", "CONMEBOL"), ("Argelia", "ALG", "CAF"), ("Jamaica", "JAM", "CONCACAF")]),
-    ("J", [("Alemania", "GER", "UEFA"), ("Serbia", "SRB", "UEFA"), ("Panama", "PAN", "CONCACAF"), ("Paraguay", "PAR", "CONMEBOL")]),
-    ("K", [("Italia", "ITA", "UEFA"), ("Turquia", "TUR", "UEFA"), ("Venezuela", "VEN", "CONMEBOL"), ("Haiti", "HAI", "CONCACAF")]),
-    ("L", [("Paises Bajos B", "PB2", "UEFA"), ("Peru", "PER", "CONMEBOL"), ("Sudafrica", "RSA", "CAF"), ("Jordania", "JOR", "AFC")]),
+    ("A", [("Mexico", "MEX", "CONCACAF"), ("Sudafrica", "RSA", "CAF"), ("Corea del Sur", "KOR", "AFC"), ("Chequia", "CZE", "UEFA")]),
+    ("B", [("Canada", "CAN", "CONCACAF"), ("Bosnia", "BIH", "UEFA"), ("Qatar", "QAT", "AFC"), ("Suiza", "SUI", "UEFA")]),
+    ("C", [("Brasil", "BRA", "CONMEBOL"), ("Marruecos", "MAR", "CAF"), ("Haiti", "HAI", "CONCACAF"), ("Escocia", "SCO", "UEFA")]),
+    ("D", [("Estados Unidos", "USA", "CONCACAF"), ("Paraguay", "PAR", "CONMEBOL"), ("Australia", "AUS", "AFC"), ("Turquia", "TUR", "UEFA")]),
+    ("E", [("Alemania", "GER", "UEFA"), ("Curazao", "CUW", "CONCACAF"), ("Costa de Marfil", "CIV", "CAF"), ("Ecuador", "ECU", "CONMEBOL")]),
+    ("F", [("Paises Bajos", "NED", "UEFA"), ("Japon", "JPN", "AFC"), ("Suecia", "SWE", "UEFA"), ("Tunez", "TUN", "CAF")]),
+    ("G", [("Belgica", "BEL", "UEFA"), ("Egipto", "EGY", "CAF"), ("Iran", "IRN", "AFC"), ("Nueva Zelanda", "NZL", "OFC")]),
+    ("H", [("Espana", "ESP", "UEFA"), ("Cabo Verde", "CPV", "CAF"), ("Arabia Saudita", "KSA", "AFC"), ("Uruguay", "URU", "CONMEBOL")]),
+    ("I", [("Francia", "FRA", "UEFA"), ("Senegal", "SEN", "CAF"), ("Irak", "IRQ", "AFC"), ("Noruega", "NOR", "UEFA")]),
+    ("J", [("Argentina", "ARG", "CONMEBOL"), ("Argelia", "ALG", "CAF"), ("Austria", "AUT", "UEFA"), ("Jordania", "JOR", "AFC")]),
+    ("K", [("Portugal", "POR", "UEFA"), ("RD Congo", "COD", "CAF"), ("Uzbekistan", "UZB", "AFC"), ("Colombia", "COL", "CONMEBOL")]),
+    ("L", [("Inglaterra", "ENG", "UEFA"), ("Croacia", "CRO", "UEFA"), ("Ghana", "GHA", "CAF"), ("Panama", "PAN", "CONCACAF")]),
 ]
 
 

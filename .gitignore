@@ -10,6 +10,7 @@ __pycache__/
 
 # Entorno
 .env
+.venv
 backend/.env
 
 # Bases de datos locales (SQLite)
