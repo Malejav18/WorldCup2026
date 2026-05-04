@@ -71,6 +71,13 @@ class RegisterResultRequest(BaseModel):
     home_goals_90: int = Field(ge=0, le=20)
     away_goals_90: int = Field(ge=0, le=20)
 
+    # Para partidos de R32 sin equipos asignados
+    home_team_id: str | None = None
+    away_team_id: str | None = None
+
+    # Para simplificar: winner_id directo (opcional, para determinar automaticamente extra time/penalties)
+    winner_id: str | None = None
+
     # Solo eliminatorias: si hubo tiempo extra y/o penales
     went_to_extra_time: bool = False
     went_to_penalties: bool = False

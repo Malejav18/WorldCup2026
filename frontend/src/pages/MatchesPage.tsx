@@ -2,7 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { tournamentApi } from "../api/tournament";
 import { predictionsApi } from "../api/predictions";
+import { authApi } from "../api/auth";
+import { useAuth } from "../context/AuthContext";
 import { PredictionRow } from "../components/PredictionRow";
+import { MatchRow } from "../components/MatchRow";
 import { Spinner } from "../components/Spinner";
 import { phaseLabel, statusBadge } from "../utils/format";
 import type { Match, Prediction } from "../types";
@@ -11,6 +14,7 @@ const STATUSES = ["ALL", "SCHEDULED", "LIVE", "FINISHED"] as const;
 const PHASES = ["ALL", "GROUP", "R32", "R16", "QF", "SF", "THIRD_PLACE", "FINAL"] as const;
 
 export function MatchesPage() {
+  const { user } = useAuth();
   const [status, setStatus] = useState<(typeof STATUSES)[number]>("SCHEDULED");
   const [phase, setPhase] = useState<(typeof PHASES)[number]>("ALL");
 
@@ -28,6 +32,14 @@ export function MatchesPage() {
         phase: phase === "ALL" ? undefined : phase,
       }),
   });
+
+  const userValidation = useQuery({
+    queryKey: ["auth", "validate"],
+    queryFn: authApi.validate,
+    enabled: !!user,
+  });
+
+  const isAdmin = userValidation.data?.role === "ADMIN";
 
   const teamMap = useMemo(() => {
     const m = new Map<string, { id: string; name: string; country_code: string; confederation: string; group_id: string | null }>();
@@ -101,7 +113,12 @@ export function MatchesPage() {
     <div className="space-y-4">
       <div>
         <h1 className="text-2xl font-bold">Partidos</h1>
-        <p className="text-slate-500 text-sm">Filtra por fase o estado. Haz tu prediccion antes de que el partido empiece.</p>
+        <p className="text-slate-500 text-sm">
+          {isAdmin
+            ? "Registra los resultados oficiales de los partidos."
+            : "Filtra por fase o estado. Haz tu prediccion antes de que el partido empiece."
+          }
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -131,7 +148,7 @@ export function MatchesPage() {
         </div>
       </div>
 
-      {matches.isLoading || teams.isLoading || groups.isLoading || allMatches.isLoading || predictions.isLoading ? (
+      {matches.isLoading || teams.isLoading || groups.isLoading || allMatches.isLoading || predictions.isLoading || userValidation.isLoading ? (
         <Spinner label="Cargando partidos..." />
       ) : (
         <div className="space-y-2">
@@ -139,16 +156,25 @@ export function MatchesPage() {
             {matches.data?.length ?? 0} partidos
           </div>
           {(matches.data ?? []).map((m: Match) => (
-            <PredictionRow
-              key={m.id}
-              match={m}
-              teams={teamMap}
-              groups={groupMap}
-              matchNumberToId={matchNumberToId}
-              existingPrediction={predictionsByMatch.get(m.id) ?? null}
-              r32UsedTeamIds={r32UsedTeamIds}
-              onR32SelectionChange={handleR32SelectionChange}
-            />
+            isAdmin ? (
+              <MatchRow
+                key={m.id}
+                match={m}
+                teams={teamMap}
+                groups={groupMap}
+              />
+            ) : (
+              <PredictionRow
+                key={m.id}
+                match={m}
+                teams={teamMap}
+                groups={groupMap}
+                matchNumberToId={matchNumberToId}
+                existingPrediction={predictionsByMatch.get(m.id) ?? null}
+                r32UsedTeamIds={r32UsedTeamIds}
+                onR32SelectionChange={handleR32SelectionChange}
+              />
+            )
           ))}
         </div>
       )}

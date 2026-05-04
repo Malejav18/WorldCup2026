@@ -18,7 +18,7 @@ $services = @(
 
 foreach ($svc in $services) {
     Write-Host "Abriendo ventana para $($svc.Name)..."
-    Start-Process powershell -ArgumentList "-NoExit", "-ExecutionPolicy", "Bypass", "-File", $svc.Script
+    Start-Process powershell -ArgumentList "-NoExit", "-ExecutionPolicy", "Bypass", "-File", "`"$($svc.Script)`""
     Start-Sleep -Milliseconds 400
 }
 

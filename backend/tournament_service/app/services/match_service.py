@@ -44,6 +44,12 @@ class MatchService:
         if match.phase != PHASE_GROUP:
             self._validate_knockout_payload(req)
 
+        # Asignar equipos si se proporcionaron (para partidos de R32 sin equipos asignados)
+        if req.home_team_id:
+            match.home_team_id = req.home_team_id
+        if req.away_team_id:
+            match.away_team_id = req.away_team_id
+
         was_finished = match.status == STATUS_FINISHED
         if was_finished and not is_correction:
             raise TournamentError("Match already has a result. Use PUT to correct it.")
@@ -59,11 +65,21 @@ class MatchService:
             match.away_goals_final = None
             match.winner_id = self._winner_for_group(match)
         else:
-            match.went_to_extra_time = req.went_to_extra_time
-            match.went_to_penalties = req.went_to_penalties
-            match.home_goals_final = req.home_goals_final if req.went_to_extra_time else req.home_goals_90
-            match.away_goals_final = req.away_goals_final if req.went_to_extra_time else req.away_goals_90
-            match.winner_id = self._winner_for_knockout(match, req)
+            # Si se proporciona winner_id directamente, determinar automaticamente extra time/penalties
+            if req.winner_id:
+                match.winner_id = req.winner_id
+                is_draw = req.home_goals_90 == req.away_goals_90
+                match.went_to_extra_time = is_draw
+                match.went_to_penalties = is_draw  # Si hay empate y winner, fueron penaltis
+                match.home_goals_final = req.home_goals_90 if not is_draw else req.home_goals_90  # Mantener mismo marcador
+                match.away_goals_final = req.away_goals_90 if not is_draw else req.away_goals_90
+            else:
+                # Lógica original
+                match.went_to_extra_time = req.went_to_extra_time
+                match.went_to_penalties = req.went_to_penalties
+                match.home_goals_final = req.home_goals_final if req.went_to_extra_time else req.home_goals_90
+                match.away_goals_final = req.away_goals_final if req.went_to_extra_time else req.away_goals_90
+                match.winner_id = self._winner_for_knockout(match, req)
 
         # Recalcular standings solo si es partido de grupo.
         if match.phase == PHASE_GROUP and match.group_id:
