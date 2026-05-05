@@ -1,0 +1,25 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+INFO:     Started reloader process [11063] using StatReload
+INFO:     Started server process [11097]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57333 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57333 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57355 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57479 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57479 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57697 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57697 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57697 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57697 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57894 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57894 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58099 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58099 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58099 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58099 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11097]

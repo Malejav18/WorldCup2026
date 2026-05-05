@@ -1,0 +1,463 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [11061] using StatReload
+INFO:     Started server process [11090]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57323 - "OPTIONS /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:08:28,656 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 401 Unauthorized"
+INFO:     127.0.0.1:57323 - "GET /notifications/me/unread-count HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57323 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:08:29,267 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/refresh "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "POST /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:08:29,337 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /users/me HTTP/1.1" 200 OK
+2026-05-04 21:08:32,088 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:08:32,107 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:08:32,176 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:08:32,239 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57332 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57332 - "OPTIONS /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57332 - "OPTIONS /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /auth/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:08:35,246 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57324 - "GET /tournament/teams HTTP/1.1" 200 OK
+2026-05-04 21:08:35,291 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57323 - "POST /auth/validate HTTP/1.1" 200 OK
+2026-05-04 21:08:35,326 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57332 - "GET /tournament/matches HTTP/1.1" 200 OK
+2026-05-04 21:08:35,343 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57338 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+2026-05-04 21:08:35,356 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57336 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec HTTP/1.1" 200 OK
+2026-05-04 21:08:35,819 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57338 - "GET /predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 HTTP/1.1" 200 OK
+2026-05-04 21:08:35,830 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57338 - "OPTIONS /predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 HTTP/1.1" 200 OK
+2026-05-04 21:08:35,848 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57323 - "GET /predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57338 - "OPTIONS /predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e HTTP/1.1" 200 OK
+2026-05-04 21:08:35,875 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/049f245e-1235-473f-aa28-26067c770868 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 HTTP/1.1" 200 OK
+2026-05-04 21:08:36,056 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57323 - "GET /predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f HTTP/1.1" 200 OK
+2026-05-04 21:08:36,111 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/049f245e-1235-473f-aa28-26067c770868 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/049f245e-1235-473f-aa28-26067c770868 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57323 - "OPTIONS /predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be HTTP/1.1" 200 OK
+2026-05-04 21:08:36,122 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57336 - "GET /predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b HTTP/1.1" 200 OK
+2026-05-04 21:08:36,132 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57338 - "GET /predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57332 - "OPTIONS /predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "OPTIONS /predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57324 - "OPTIONS /predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "OPTIONS /predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57337 - "OPTIONS /predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57338 - "OPTIONS /predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e HTTP/1.1" 200 OK
+2026-05-04 21:08:36,469 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,489 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57323 - "GET /predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,516 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "GET /predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,675 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57324 - "GET /predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,700 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,726 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57336 - "GET /predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,740 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "GET /predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,755 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c "HTTP/1.1 404 Not Found"
+2026-05-04 21:08:36,767 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57324 - "GET /predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57323 - "GET /predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,808 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57338 - "GET /predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,817 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57336 - "GET /predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57338 - "OPTIONS /predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce HTTP/1.1" 200 OK
+2026-05-04 21:08:36,834 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "GET /predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,848 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,852 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57324 - "GET /predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,858 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b "HTTP/1.1 404 Not Found"
+2026-05-04 21:08:36,865 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57336 - "GET /predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57323 - "GET /predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,883 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "GET /predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57323 - "OPTIONS /auth/logout HTTP/1.1" 200 OK
+2026-05-04 21:08:36,898 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57338 - "GET /predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,902 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57332 - "GET /predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,919 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57324 - "GET /predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b HTTP/1.1" 404 Not Found
+2026-05-04 21:08:36,939 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/logout "HTTP/1.1 204 No Content"
+INFO:     127.0.0.1:57323 - "POST /auth/logout HTTP/1.1" 204 No Content
+2026-05-04 21:08:36,954 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57336 - "GET /predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e HTTP/1.1" 404 Not Found
+2026-05-04 21:08:37,022 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57337 - "GET /predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57352 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+2026-05-04 21:09:09,790 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/login "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57352 - "POST /auth/login HTTP/1.1" 200 OK
+2026-05-04 21:09:09,804 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57352 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57353 - "OPTIONS /tournament/info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57356 - "OPTIONS /rankings/global/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57357 - "OPTIONS /scoring/me/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57358 - "OPTIONS /leagues/me HTTP/1.1" 200 OK
+2026-05-04 21:09:09,953 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57352 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:09:10,180 INFO httpx: HTTP Request: GET http://127.0.0.1:8007/leagues/me "HTTP/1.1 200 OK"
+2026-05-04 21:09:10,182 INFO httpx: HTTP Request: GET http://127.0.0.1:8005/scoring/me/summary "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57357 - "GET /leagues/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57356 - "GET /scoring/me/summary HTTP/1.1" 200 OK
+2026-05-04 21:09:10,193 INFO httpx: HTTP Request: GET http://127.0.0.1:8006/rankings/global/me "HTTP/1.1 200 OK"
+2026-05-04 21:09:10,195 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/info "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57359 - "GET /rankings/global/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57353 - "GET /tournament/info HTTP/1.1" 200 OK
+2026-05-04 21:09:12,192 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,203 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57359 - "GET /predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,208 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,367 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57352 - "GET /predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,389 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 "HTTP/1.1 404 Not Found"
+2026-05-04 21:09:12,407 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e "HTTP/1.1 404 Not Found"
+2026-05-04 21:09:12,410 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/049f245e-1235-473f-aa28-26067c770868 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57357 - "GET /predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57358 - "GET /predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/049f245e-1235-473f-aa28-26067c770868 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,495 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57359 - "GET /predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,520 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,557 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57352 - "GET /predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,579 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,604 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57359 - "GET /predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,622 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,642 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57358 - "GET /predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,664 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57352 - "GET /predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,681 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,694 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57359 - "GET /predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,700 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,711 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57358 - "GET /predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,851 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57352 - "GET /predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,874 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57357 - "GET /predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,897 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be HTTP/1.1" 404 Not Found
+2026-05-04 21:09:12,934 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,023 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57358 - "GET /predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,054 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57357 - "GET /predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,094 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57353 - "GET /predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,165 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57352 - "GET /predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,227 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b "HTTP/1.1 404 Not Found"
+2026-05-04 21:09:13,235 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57359 - "GET /predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57358 - "GET /predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,246 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57357 - "GET /tournament/teams HTTP/1.1" 200 OK
+2026-05-04 21:09:13,262 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e "HTTP/1.1 404 Not Found"
+INFO:     127.0.0.1:57356 - "GET /predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e HTTP/1.1" 404 Not Found
+2026-05-04 21:09:13,308 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57359 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+2026-05-04 21:09:13,465 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+2026-05-04 21:09:13,467 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+2026-05-04 21:09:13,471 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+2026-05-04 21:09:13,473 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57358 - "POST /auth/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57357 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57352 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57353 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57353 - "OPTIONS /predictions/special/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57352 - "OPTIONS /scoring/me HTTP/1.1" 200 OK
+2026-05-04 21:09:17,871 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/special/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57357 - "GET /predictions/special/me HTTP/1.1" 200 OK
+2026-05-04 21:09:17,882 INFO httpx: HTTP Request: GET http://127.0.0.1:8005/scoring/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57353 - "GET /scoring/me HTTP/1.1" 200 OK
+2026-05-04 21:09:20,229 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+2026-05-04 21:09:20,230 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57381 - "POST /auth/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57384 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:09:20,247 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57357 - "GET /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:09:20,317 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+2026-05-04 21:09:20,320 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+2026-05-04 21:09:20,321 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57353 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57352 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57380 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57380 - "OPTIONS /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+2026-05-04 21:09:21,304 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=FINISHED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57352 - "GET /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57352 - "OPTIONS /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 200 OK
+2026-05-04 21:09:23,579 INFO httpx: HTTP Request: POST http://127.0.0.1:8003/tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result "HTTP/1.1 400 Bad Request"
+INFO:     127.0.0.1:57380 - "POST /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 400 Bad Request
+2026-05-04 21:09:25,290 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57380 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:09:26,701 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57380 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+2026-05-04 21:09:40,369 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57390 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:09:55,420 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57394 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:10:10,491 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57396 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:10:25,522 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57398 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:10:40,546 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57401 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:10:55,568 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57403 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:11:10,613 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57405 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:11:25,637 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57412 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:11:40,666 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57414 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:11:55,781 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57417 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:12:11,013 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57419 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57423 - "OPTIONS /notifications/me HTTP/1.1" 200 OK
+2026-05-04 21:12:22,888 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57423 - "GET /notifications/me HTTP/1.1" 200 OK
+2026-05-04 21:12:26,037 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57423 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:12:28,835 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57423 - "GET /notifications/me HTTP/1.1" 200 OK
+2026-05-04 21:12:36,641 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57430 - "POST /auth/validate HTTP/1.1" 200 OK
+2026-05-04 21:12:36,690 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57424 - "GET /tournament/teams HTTP/1.1" 200 OK
+2026-05-04 21:12:36,701 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57428 - "GET /tournament/matches HTTP/1.1" 200 OK
+2026-05-04 21:12:36,707 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57429 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+2026-05-04 21:12:36,715 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57427 - "GET /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:12:36,749 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57431 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:12:41,057 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57431 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:12:56,075 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57440 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:13:11,098 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57445 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:13:26,116 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57451 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:13:41,136 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57454 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:13:56,158 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57457 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:14:11,180 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57459 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:14:26,200 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57461 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:14:41,273 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57464 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:14:53,211 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57478 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:14:53,275 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57478 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:14:53,391 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57478 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:14:53,554 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57484 - "POST /auth/validate HTTP/1.1" 200 OK
+2026-05-04 21:14:53,571 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+2026-05-04 21:14:53,573 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+2026-05-04 21:14:53,574 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+2026-05-04 21:14:53,576 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57480 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57482 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57483 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57481 - "GET /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:14:53,617 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57478 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:21:12,813 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57546 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:21:27,838 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57575 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:21:42,863 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57619 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:21:57,885 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57629 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:22:12,943 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57633 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:22:27,963 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57640 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:22:42,987 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57643 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:22:58,009 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57646 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57695 - "OPTIONS /users/me HTTP/1.1" 200 OK
+2026-05-04 21:25:10,863 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 401 Unauthorized"
+INFO:     127.0.0.1:57694 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57694 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:25:10,905 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 401 Unauthorized"
+INFO:     127.0.0.1:57695 - "GET /users/me HTTP/1.1" 401 Unauthorized
+2026-05-04 21:25:11,153 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/refresh "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57696 - "POST /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:25:11,223 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57696 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57695 - "OPTIONS /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "OPTIONS /tournament/teams HTTP/1.1" 200 OK
+2026-05-04 21:25:11,300 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57696 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57695 - "OPTIONS /auth/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "OPTIONS /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57707 - "OPTIONS /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57708 - "OPTIONS /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "OPTIONS /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:25:11,406 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57696 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:25:11,574 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57706 - "POST /auth/validate HTTP/1.1" 200 OK
+2026-05-04 21:25:11,585 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+2026-05-04 21:25:11,589 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+2026-05-04 21:25:11,595 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+2026-05-04 21:25:11,598 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57694 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57695 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57707 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57708 - "GET /tournament/matches HTTP/1.1" 200 OK
+2026-05-04 21:25:11,828 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57696 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:33:58,559 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57842 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57842 - "OPTIONS /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+2026-05-04 21:34:00,710 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=FINISHED "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57842 - "GET /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57842 - "OPTIONS /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 200 OK
+2026-05-04 21:34:05,090 INFO httpx: HTTP Request: POST http://127.0.0.1:8003/tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result "HTTP/1.1 400 Bad Request"
+INFO:     127.0.0.1:57844 - "POST /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 400 Bad Request
+2026-05-04 21:34:13,648 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57846 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:34:28,674 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57848 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:34:43,706 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57851 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:34:58,778 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57858 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:35:13,800 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57864 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:35:28,827 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57868 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:35:43,849 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57875 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:35:58,875 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57877 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:36:09,502 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57893 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:36:09,599 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57893 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:36:09,650 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57898 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:36:09,824 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+2026-05-04 21:36:09,836 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+2026-05-04 21:36:09,846 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+2026-05-04 21:36:09,848 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+2026-05-04 21:36:09,849 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57899 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57893 - "POST /auth/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57902 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57900 - "GET /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:36:09,980 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57898 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57969 - "OPTIONS /notifications/me/unread-count HTTP/1.1" 200 OK
+2026-05-04 21:37:53,988 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57969 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58095 - "OPTIONS /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58096 - "OPTIONS /users/me HTTP/1.1" 200 OK
+2026-05-04 21:51:58,456 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 401 Unauthorized"
+INFO:     127.0.0.1:58095 - "GET /users/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58095 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:51:58,487 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 401 Unauthorized"
+INFO:     127.0.0.1:58096 - "GET /users/me HTTP/1.1" 401 Unauthorized
+2026-05-04 21:51:58,618 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/refresh "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58098 - "POST /auth/refresh HTTP/1.1" 200 OK
+2026-05-04 21:51:58,765 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58098 - "GET /users/me HTTP/1.1" 200 OK
+2026-05-04 21:51:58,802 INFO httpx: HTTP Request: GET http://127.0.0.1:8002/users/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58098 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "OPTIONS /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58096 - "OPTIONS /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "OPTIONS /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "OPTIONS /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58102 - "OPTIONS /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58103 - "OPTIONS /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58104 - "OPTIONS /auth/validate HTTP/1.1" 200 OK
+2026-05-04 21:51:59,062 INFO httpx: HTTP Request: GET http://127.0.0.1:8008/notifications/me/unread-count "HTTP/1.1 200 OK"
+2026-05-04 21:51:59,064 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/teams "HTTP/1.1 200 OK"
+2026-05-04 21:51:59,067 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches?status=SCHEDULED "HTTP/1.1 200 OK"
+2026-05-04 21:51:59,069 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/matches "HTTP/1.1 200 OK"
+2026-05-04 21:51:59,070 INFO httpx: HTTP Request: GET http://127.0.0.1:8003/tournament/groups "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58095 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58096 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58104 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58103 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "GET /tournament/groups HTTP/1.1" 200 OK
+2026-05-04 21:51:59,153 INFO httpx: HTTP Request: GET http://127.0.0.1:8004/predictions/me "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58102 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-05-04 21:51:59,193 INFO httpx: HTTP Request: POST http://127.0.0.1:8001/auth/validate "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58095 - "POST /auth/validate HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11090]
+INFO:     Stopping reloader process [11061]

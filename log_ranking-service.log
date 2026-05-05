@@ -1,0 +1,11 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8006 (Press CTRL+C to quit)
+INFO:     Started reloader process [11067] using StatReload
+INFO:     Started server process [11087]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57362 - "GET /rankings/global/me HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11087]

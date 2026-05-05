@@ -1,0 +1,60 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8008 (Press CTRL+C to quit)
+INFO:     Started reloader process [11069] using StatReload
+INFO:     Started server process [11095]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57325 - "GET /notifications/me/unread-count HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57325 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57325 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57388 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57392 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57395 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57397 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57399 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57402 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57404 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57406 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57413 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57415 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57418 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57420 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57425 - "GET /notifications/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57425 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57425 - "GET /notifications/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57439 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57441 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57446 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57452 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57455 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57458 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57460 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57462 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57465 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57485 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57547 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57576 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57620 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57630 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57634 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57641 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57644 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57709 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57843 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57847 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57849 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57852 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57860 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57865 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57869 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57876 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57878 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57903 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58105 - "GET /notifications/me/unread-count HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11095]

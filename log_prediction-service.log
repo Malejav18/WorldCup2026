@@ -1,0 +1,79 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8004 (Press CTRL+C to quit)
+INFO:     Started reloader process [11065] using StatReload
+INFO:     Started server process [11091]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57342 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/049f245e-1235-473f-aa28-26067c770868 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57345 - "GET /predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57346 - "GET /predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57347 - "GET /predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57345 - "GET /predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57346 - "GET /predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57342 - "GET /predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57344 - "GET /predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57343 - "GET /predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/625615a9-a20b-4765-a846-dee518559e69 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/1f57c33a-f5be-4c0c-bc0b-22ef1c2986a1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/2145c6be-4b42-4677-87d1-c52cff1a47ec HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57369 - "GET /predictions/me/match/25bd33d6-2f2d-4eb3-856c-392842d589e0 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57368 - "GET /predictions/me/match/3179c669-bdab-4eba-8430-fac6648600e8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57370 - "GET /predictions/me/match/0298ee6e-ef5e-468a-9049-e1edabf8937e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/049f245e-1235-473f-aa28-26067c770868 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/b8c7eab5-17ca-4bb1-9e68-92d87214a0e8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/962ef085-5db0-4e52-b849-3db6fd1c3996 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/8d051dbd-72f6-4ede-b03a-3170e12ce3c5 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/4993c19e-c20e-4487-bdb1-0832fef48221 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/c474a637-ac84-46da-b299-a7cf91a0fe0b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57368 - "GET /predictions/me/match/2e991c53-c8f4-43d1-b0bd-2ea89209f85c HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/7f40bc73-6982-4e75-8edd-4cfb2d607d64 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/af34d95f-84c6-4d00-b8c9-97741dff6ff9 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/fe92539e-b77e-4857-af27-0685e877653f HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57368 - "GET /predictions/me/match/aa0f2699-53a1-4f87-b739-33df6ea9905c HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/4bf5dc36-1589-48fc-b44f-26afccd2a28f HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/3907d514-7c67-4fa2-b7ce-b53ef799085d HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57369 - "GET /predictions/me/match/a03b5b95-2525-4f92-a858-baeb8cbb1d61 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/d49ec193-b2e9-48d8-a4ed-75f531b35ffe HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/f8577f2e-7951-47fc-9c42-6853c965a7be HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/bf299c66-8e1f-4742-b884-1b99286e3b70 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/514543b2-13ad-407d-8f2f-7c5ab4c4a988 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/b265a73a-9fe2-4df7-8595-861fd92d2b55 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57368 - "GET /predictions/me/match/5476ff4f-6ea3-4b43-80ef-2adbef23713b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57366 - "GET /predictions/me/match/6b3c2d60-58b2-4f9f-8b9c-ca7a191ec978 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57367 - "GET /predictions/me/match/fd9679b7-ba8e-4658-92e1-c4a3905a600b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me/match/74626bc5-66aa-4745-bc29-76c1160ab6ce HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57368 - "GET /predictions/me/match/7fc09f6a-2e6e-4d2e-9189-d12c49f9015e HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57365 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57365 - "GET /predictions/special/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57365 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57437 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57491 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57715 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58108 - "GET /predictions/me HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11091]

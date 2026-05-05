@@ -1,0 +1,49 @@
+INFO:     Will watch for changes in these directories: ['/Users/maleja/Downloads/ARQUITECTURA_SOFT/corte2/worldcup2026/WorldCup2026/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8003 (Press CTRL+C to quit)
+INFO:     Started reloader process [11064] using StatReload
+INFO:     Started server process [11094]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57334 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57334 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57339 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57340 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57361 - "GET /tournament/info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57361 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57361 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57376 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57375 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57382 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57386 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57383 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57385 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57386 - "GET /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57386 - "POST /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57386 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57432 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57434 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57435 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57433 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57486 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57488 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57489 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57487 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57713 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57710 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57711 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57712 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57845 - "GET /tournament/matches?status=FINISHED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57845 - "POST /tournament/admin/matches/c9e0b792-3c3e-471f-b08a-b5943c41f1e0/result HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57904 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57906 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57907 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57905 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58106 - "GET /tournament/teams HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58110 - "GET /tournament/matches?status=SCHEDULED HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58109 - "GET /tournament/matches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58107 - "GET /tournament/groups HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11094]
+INFO:     Stopping reloader process [11064]
