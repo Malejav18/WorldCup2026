@@ -10,6 +10,8 @@ export const tournamentApi = {
   matches: async (params?: { phase?: string; status?: string; group_id?: string }): Promise<Match[]> =>
     (await api.get<Match[]>("/tournament/matches", { params })).data,
   match: async (id: string): Promise<Match> => (await api.get<Match>(`/tournament/matches/${id}`)).data,
-  registerResult: async (matchId: string, body: { home_goals_90: number; away_goals_90: number }) =>
+  registerResult: async (matchId: string, body: { home_goals_90: number; away_goals_90: number; home_team_id?: string; away_team_id?: string; winner_id?: string }) =>
     (await api.post(`/tournament/admin/matches/${matchId}/result`, body)).data,
+  updateResult: async (matchId: string, body: { home_goals_90: number; away_goals_90: number; home_team_id?: string; away_team_id?: string; winner_id?: string }) =>
+    (await api.put(`/tournament/admin/matches/${matchId}/result`, body)).data,
 };

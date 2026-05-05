@@ -12,6 +12,9 @@ class MatchRepository:
     def get(self, match_id: str) -> Optional[Match]:
         return self.db.query(Match).filter(Match.id == match_id).first()
 
+    def get_by_number(self, match_number: int) -> Optional[Match]:
+        return self.db.query(Match).filter(Match.match_number == match_number).first()
+
     def list_all(
         self,
         *,

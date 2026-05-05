@@ -87,7 +87,11 @@ export function MatchRow({ match, teams, groups }: { match: Match; teams: Map<st
         payload.winner_id = selectedWinnerId;
       }
 
-      await tournamentApi.registerResult(match.id, payload);
+      const updateExisting = match.home_goals_90 !== null || match.away_goals_90 !== null;
+      await (updateExisting
+        ? tournamentApi.updateResult(match.id, payload)
+        : tournamentApi.registerResult(match.id, payload)
+      );
       setSaved(true);
       qc.invalidateQueries({ queryKey: ["tournament", "matches"] });
     } catch (err) {

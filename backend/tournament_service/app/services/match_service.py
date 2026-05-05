@@ -29,6 +29,40 @@ class TournamentError(ValueError):
     """Error de dominio para el tournament-service."""
 
 
+KNOCKOUT_ADVANCEMENT: dict[int, list[tuple[int, str, str]]] = {
+    73: [(90, "home", "winner")],
+    74: [(89, "home", "winner")],
+    75: [(90, "away", "winner")],
+    76: [(91, "home", "winner")],
+    77: [(89, "away", "winner")],
+    78: [(91, "away", "winner")],
+    79: [(92, "home", "winner")],
+    80: [(92, "away", "winner")],
+    81: [(94, "home", "winner")],
+    82: [(94, "away", "winner")],
+    83: [(93, "home", "winner")],
+    84: [(93, "away", "winner")],
+    85: [(96, "home", "winner")],
+    86: [(95, "home", "winner")],
+    87: [(96, "away", "winner")],
+    88: [(95, "away", "winner")],
+    89: [(97, "home", "winner")],
+    90: [(97, "away", "winner")],
+    91: [(99, "home", "winner")],
+    92: [(99, "away", "winner")],
+    93: [(98, "home", "winner")],
+    94: [(98, "away", "winner")],
+    95: [(100, "home", "winner")],
+    96: [(100, "away", "winner")],
+    97: [(101, "home", "winner")],
+    98: [(101, "away", "winner")],
+    99: [(102, "home", "winner")],
+    100: [(102, "away", "winner")],
+    101: [(104, "home", "winner"), (103, "home", "loser")],
+    102: [(104, "away", "winner"), (103, "away", "loser")],
+}
+
+
 class MatchService:
     def __init__(self, db: Session, settings: Settings):
         self.db = db
@@ -94,12 +128,41 @@ class MatchService:
                 payload={"group_id": match.group_id, "match_id": match.id},
             )
 
+        if match.phase != PHASE_GROUP:
+            self._propagate_knockout_advancement(match)
+
         event_name = "match.result.corrected" if (was_finished and is_correction) else "match.result.registered"
         self._emit_match_event(match, event_name)
 
         self.db.commit()
         self.db.refresh(match)
         return match
+
+    def _propagate_knockout_advancement(self, match: Match) -> None:
+        if match.winner_id is None:
+            return
+
+        loser_id = None
+        if match.home_team_id and match.away_team_id:
+            loser_id = match.home_team_id if match.winner_id == match.away_team_id else match.away_team_id
+
+        for target_match_number, side, source in KNOCKOUT_ADVANCEMENT.get(match.match_number, []):
+            target_match = self.matches.get_by_number(target_match_number)
+            if target_match is None or target_match.status == STATUS_FINISHED:
+                continue
+
+            if source == "winner":
+                team_id = match.winner_id
+            else:
+                team_id = loser_id
+
+            if team_id is None:
+                continue
+
+            if side == "home":
+                target_match.home_team_id = team_id
+            else:
+                target_match.away_team_id = team_id
 
     # ---- Helpers ----
 
